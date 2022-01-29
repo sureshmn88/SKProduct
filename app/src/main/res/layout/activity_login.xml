@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="loginModel"
+            type="com.sk.myproduct.login.LoginViewModel" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#999"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".login.LoginActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/login"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@color/white"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:padding="16dp"
+            android:singleLine="true"
+            android:text="@={loginModel.emailTxt}" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@color/white"
+            android:hint="@string/password"
+            android:inputType="numberPassword"
+            android:padding="16dp"
+            android:singleLine="true"
+            android:text="@={loginModel.passwordTxt}" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@color/white"
+            android:onClick="@{()->loginModel.onSubmit()}"
+            android:padding="16dp"
+            android:text="@string/login" />
+
+
+    </LinearLayout>
+</layout>
